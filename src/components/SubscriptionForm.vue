@@ -13,12 +13,12 @@
       <div class="col-10 col-sm-8 col-lg-7 offset-xl-1 mt-5 mt-xl-3 pt-xl-4 px-xl-5 pb-4 position-relative"
         id="main-steps">
         <main>
-          <Step0 v-if="step === 0" v-bind:step="step" v-bind:next-step="nextStep" 
-            v-bind:validate-form="validateForm">
+
+          <Step0 v-bind:form-values="values" v-if="step === 0" v-bind:step="step">
           </Step0>
 
-            <Step1 v-bind:form-values="values" v-if="step === 1" v-bind:step="step">
-              </Step1>
+          <Step1 v-bind:form-values="values" v-if="step === 1" v-bind:step="step">
+            </Step1>
 
             <keep-alive>
               <Step2 v-bind:form-values="values" v-if="step === 2" v-bind:step="step">
