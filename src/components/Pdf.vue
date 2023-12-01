@@ -4,6 +4,10 @@ import html2pdf from "html2pdf.js";
 export default {
   name: "Pdf",
   props: {
+    document_info:{
+     type: Object,
+     required: true,
+    },
     applicant: {
       type: Object,
       required: true,
@@ -53,7 +57,7 @@ export default {
 
     <div class="official-document" id="element-to-print" style="display: none">
       <header>
-        <p>(Miejscowość) dnia ..........</p>
+        <p>{{document_info.city}}, dnia {{document_info.date}}</p>
         <h2 class="text-right">
           {{ court.name }}
         </h2>
@@ -108,23 +112,23 @@ export default {
         </p>
         <p>Zmarły pozostawił testament / nie pozostawił testamentu</p>
         <p>W dniu śmierci był(a) {{ died.marital_status }}.</p>
-        <p>Związek małżeński zawierał {{ died.marital_count }}.</p>
+        <p>Związek małżeński zawierał {{ died.martial_count }}.</p>
         <p>
-          Spadkobiercami są: {{ participant.name }} {{ participant.surname }}
+          Spadkobiercami są: <i><b> {{ participant.name }} {{ participant.surname }} </b></i>
         </p>
 
         <p>
-          W skład spadku wchodzi / nie wchodzi (niepotrzebne skreślić)
-          gospodarstwo rolne o powierzchni …położone w {{ died.post_address }}
+          W skład spadku wchodzi gospodarstwo rolne o powierzchni  <i>{{died.farm_count}} położone w {{ died.post_address }} </i>
         </p>
       </section>
 
       <br /><br /><br />
+      <p>..........................................................</p>
       <p>własnoręczny podpis wnioskodawcy</p>
 
       <br /><br /><br />
 
-      <section style="margin-top: 190px">
+      <section style="margin-top: 200px">
         <h3>Uwagi do wniosku</h3>
 
         <p>Do wniosku należy dołączyć:</p>
@@ -174,13 +178,19 @@ export default {
 </template>
 
 <style>
+#element-to-print{
+  color: black !important;
+}
 h1,
 h3 {
   font-size: 15px;
+  font-weight: bold;
 }
 h2 {
   font-size: 15px;
   text-align: right;
+  font-weight: bold;
+
 }
 
 p,

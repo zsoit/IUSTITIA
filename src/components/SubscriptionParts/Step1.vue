@@ -14,28 +14,33 @@ const props = defineProps({
 
 <template>
   <Pdf
+      :document_info="{
+        date: '23 Maja 2023',
+        city: 'Koszalin'
+      }"
       :applicant="{
-      name: 'Mateusz',
+      name: 'Paweł',
       surname: 'Lufka',
-      pesel: '0999',
-      post_address: 'Pilulice, 77-000 Chuj',
+      pesel: '11111111111',
+      post_address: 'Pilulice, 77-000 Dwie Ulice',
     }"
       :participant="{
       name: 'Jan',
-      surname: 'Pawel II',
-      pesel: '0999',
+      surname: 'Paweł II',
+      pesel: '222222222',
       post_address: 'Pizdogrzmoty Dolne, 88-200 Bychawa',
     }"
       :died="{
       name: 'Janusz',
       surname: 'Sram',
-      date: '24 maj',
-      post_address: 'chuj',
-      marital_status: 'zameżny',
-      martial_count: '2',
+      date: '24 maja 2021',
+      post_address: 'Galaktyka, Kurvix 99-2222',
+      marital_status: 'zamężny',
+      martial_count: 'Dwa razy',
+      farm_count: '20 milionów metrów'
     }"
       :court="{
-      name: 'Sąd Rejonowy w Rzeszowie I lub XI Wydział Cywilny - Jebanie Starego',
+      name: 'Sąd Rejonowy w Piździszewie I lub 69 Wydział Cywilny',
     }"
   ></Pdf>
   <section id="first-step">
