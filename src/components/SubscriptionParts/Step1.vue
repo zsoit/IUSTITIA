@@ -1,19 +1,4 @@
-<script setup>
-import Pdf from './../Pdf.vue'
-
-const props = defineProps({
-  step: Number,
-  formValues: Object,
-  nextStep: Function,
-  validateForm: Function
-})
-
-
-
-</script>
-
 <template>
-  <Pdf></Pdf>
   <section id="first-step">
     <div class="row mt-4 px-2">
       <div class="col-12">
@@ -58,3 +43,13 @@ const props = defineProps({
   </section>
 </template>
 
+<script setup>
+
+const props = defineProps({
+  step: Number,
+  formValues: Object,
+  nextStep: Function,
+  validateForm: Function
+})
+
+</script>

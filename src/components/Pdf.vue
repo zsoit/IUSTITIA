@@ -41,7 +41,7 @@ export default {
 
     <div class="official-document" id="element-to-print" style="display: none">
       <header>
-        <h1>Wniosek o spadek #222222</h1>
+        <h1>Wniosek o stwierdzenie nabycia spadku</h1>
       </header>
 
       <section>
@@ -138,6 +138,5 @@ footer {
   font-size: 0.8em;
   color: #888;
 }
-
 
 </style>
