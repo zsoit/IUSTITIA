@@ -13,7 +13,31 @@ const props = defineProps({
 </script>
 
 <template>
-  <Pdf></Pdf>
+  <Pdf
+      :applicant="{
+      name: 'Mateusz',
+      surname: 'Lufka',
+      pesel: '0999',
+      post_address: 'Pilulice, 77-000 Chuj',
+    }"
+      :participant="{
+      name: 'Jan',
+      surname: 'Pawel II',
+      pesel: '0999',
+      post_address: 'Pizdogrzmoty Dolne, 88-200 Bychawa',
+    }"
+      :died="{
+      name: 'Janusz',
+      surname: 'Sram',
+      date: '24 maj',
+      post_address: 'chuj',
+      marital_status: 'zameżny',
+      martial_count: '2',
+    }"
+      :court="{
+      name: 'Sąd Rejonowy w Rzeszowie I lub XI Wydział Cywilny - Jebanie Starego',
+    }"
+  ></Pdf>
   <section id="first-step">
     <div class="row mt-4 px-2">
       <div class="col-12">
